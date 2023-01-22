@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crea Fattura by Fisioterapisti</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--Navbar-->
+<div class="container">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Pagaci un caffè</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Telegram</a></li>
+    </ul>
+  </header>
+</div>
+
+<div class="content">
+  <div class="content__inner">
+    <div class="container"></div><br></div>
+    <div class="container overflow-hidden">
+      <div class="multisteps-form">
+        <div class="row">
+          <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
+            <div class="multisteps-form__progress">
+              <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">I tuoi dati</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Address">Dati Paziente o Ente</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Order Info">Dati Prestazione</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Message">Dati Fattura</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-8 m-auto">
+
+            <!--I tuoi dati-->
+            <form name="yourData" class="multisteps-form__form">
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
+                <h3 class="multisteps-form__title">I tuoi dati</h3>
+                <div class="multisteps-form__content">
+                  <div class="form-row mt-4">
+                    <div class="col-12 col-sm-6">
+                      <p class="font-weight-bold">Il tuo titolo:</p>
+                      <input type="radio" id="F" name="titolo" value="F" checked>
+                      <label for="F">Dott.ssa</label><br>
+                      <input type="radio" id="M" name="titolo" value="M">
+                      <label for="M">Dott.</label><br>
+                      <input type="radio" id="none" name="titolo" value="None">
+                      <label for="none">Preferisco non specificare</label>
+                    </div>
+                  </div>
+                  <div class="form-row mt-4">
+                    <div class="col-12 col-sm-6">
+                      <label for="Cognome">Inserisci il tuo Cognome:</label>
+                      <input class="multisteps-form__input form-control" name="Cognome" required type="text" placeholder="Cognome"/>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                      <label for="Nome">Inserisci il tuo Nome:</label>
+                      <input class="multisteps-form__input form-control" name="Nome" required type="text" placeholder="Nome"/>
+                    </div>
+                  </div>
+                  <div class="form-row mt-4">
+                    <div class="col-12 col-sm-6">
+                      <label for="Indirizzo">Inserisci il tuo Indirizzo:</label>
+                      <input class="multisteps-form__input form-control" name="Indirizzo" required type="text" placeholder="Indirizzo"/>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                      <label for="P.IVA">Inserisci la tua P.IVA:</label>
+                      <input class="multisteps-form__input form-control" name="P.IVA" required type="text" placeholder="P. IVA"/>
+                    </div>
+                  </div>
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary ml-auto js-btn-next" id="step1" type="button" title="Next">Avanti</button>
+                  </div>
+                </div>
+              </div>
+
+              <!--Dati paziente/ente-->
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                <h3 class="multisteps-form__title">Inserisci i dati del Paziente o dell'Ente:</h3>
+                <div class="multisteps-form__content">
+                  <div class="form-row mt-4" id="persFis">
+                    <div class="col-12 col-sm-6">
+                      <label for="name">Nome o Ragione Sociale</label>
+                      <input class="multisteps-form__input form-control" name="name" required type="text" placeholder="Nome Paziente o Ragione Sociale"/>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                      <label for="taxcode">C.F. del Paziente o P.IVA Ente:</label>
+                      <input class="multisteps-form__input form-control" name="taxcode" required type="text" placeholder="Codice Fiscale o P.IVA"/>
+                    </div>
+                  </div>
+                  <div class="form-row mt-4">
+                    <div class="col-12 col-sm-6">
+                      <label for="taxcode">Indirizzo del Paziente/Ente:</label>
+                      <input class="multisteps-form__input form-control" name="address" required type="text" placeholder="Indirizzo"/>
+                    </div>
+                  </div>
+                  <hr class="hr hr-blurry" />
+                  <div><p>NB: Ricorda di raccogliere il consenso privacy al trattamento dei dati personali.</p></div>
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary js-btn-prev" id="prevStep1" type="button" title="Prev">Indietro</button>
+                    <button class="btn btn-primary ml-auto js-btn-next" id="step2" type="button" title="Next">Avanti</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                <h3 class="multisteps-form__title">Prestazione</h3>
+                <div class="multisteps-form__content">
+                  <div class="prestazione">
+                    <div>
+                      <label for="Ore">Inserisci quante ore o quante unità da fatturare:</label>
+                      <input class="multisteps-form__input form-control" name="Ore" required type="number" placeholder="Ore/Numero"/>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="Descrizione">Descrivi in breve la prestazione:</label>
+                      <input class="multisteps-form__input form-control" name="Descrizione" required type="text" placeholder="Descrizione Servizio"/>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="Unitario">Inserisci il prezzo orario/unitario, solo numeri (senza "€"):</label>
+                      <input class="multisteps-form__input form-control" name="Unitario" required type="number" placeholder="Prezzo Unitario"/>
+                    </div>
+                  </div>
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary text-center add_form_field" type="button" title="Add">Aggiungi Prestazione</button>
+                  </div>
+                  <hr/>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">Vuoi aggiungere il 4% per i contributi INPS?</label>
+                  </div>
+                  <br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">Vuoi aggiungere €2 per la Marca da Bollo?</label>
+                  </div>
+                  <br>
+                  <p>Come scelgo se aggiungere il 4% o i €2? Va deciso insieme a chi riceve la fattura.</p>
+
+
+                  <div class="row">
+                    <div class="button-row d-flex mt-4 col-12">
+                      <button class="btn btn-primary js-btn-prev" id="prevStep2" type="button" title="Prev">Indietro</button>
+                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Avanti</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                <h3 class="multisteps-form__title">Dati Fattura:</h3>
+                <div class="multisteps-form__content">
+                  <div class="form-row mt-4">
+                    <div class="col-12 col-sm-6">
+                      <label for="emissione">Data di Emissione della Fattura:</label>
+                      <input class="multisteps-form__input form-control" name="Emissione" required type="date" placeholder="Data di Emissione"/>
+                      
+                    </div>
+                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                      <label for="Numero">Numero della Fattura:</label>
+                      <input class="multisteps-form__input form-control" name="Numero" required type="number" placeholder="Numero Fattura"/>
+                    </div>
+                  </div>
+                  <hr>
+                  <p>Assicurati che la data e il numero di questa fattura non siano antecedenti a quelli dell'ultima fattura che hai emesso.</p>
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary js-btn-prev" id="prevStep3" type="button" title="Prev">Indietro</button>
+                    <button class="btn btn-success ml-auto" type="button" title="Send">Genera PDF</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+<script> $(document).ready(function() {
+  var max_fields = 5;
+  var wrapper = $(".prestazione");
+  var add_button = $(".add_form_field");
+
+  var x = 1;
+  $(add_button).click(function(e) {
+      e.preventDefault();
+      if (x < max_fields) {
+          x++;
+          $(wrapper).append('<div><div><br><hr class="hr hr-blurry" /><br><label for="Ore">Inserisci quante ore o quante unità da fatturare:</label><input class="multisteps-form__input form-control" name="Ore" required type="number" placeholder="Ore/Numero"/></div><br><div><label for="Descrizione">Descrivi in breve la prestazione:</label><input class="multisteps-form__input form-control" name="Descrizione" required type="text" placeholder="Descrizione"/></div><br><div><label for="Unitario">Inserisci il prezzo orario/unitario, solo numeri (senza "€"):</label><input class="multisteps-form__input form-control" name="Unitario" required type="number" placeholder="Prezzo Unitario"/></div><br><button class="btn btn-danger delete" type="button">Elimina Prestazione</button></div>'); //add input box
+      } else {
+          alert('Puoi aggiungere fino a 5 prestazioni')
+      }
+  });
+
+  $(wrapper).on("click", ".delete", function(e) {
+      var elimina = confirm("Vuoi cancellare la prestazione?")
+      if (elimina=true) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x--;
+      } else {}
+  })
+});
+</script>
+
+<script  src="function.js"></script>
+
+</body>
+</html>
