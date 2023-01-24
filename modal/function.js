@@ -162,9 +162,7 @@ const setAnimationType = newType => {
   let Nome = document.forms["yourData"]["Nome"].value;
   let Indirizzo = document.forms["yourData"]["Indirizzo"].value;
   let PIVA = document.forms["yourData"]["P.IVA"].value;
-  let yourData = [Cognome, Nome, Indirizzo, PIVA]
-  let activePanel = getActivePanel();
-  let activeStep = getActiveStep();
+  let yourData = [Cognome, Nome, Indirizzo, PIVA];
 
   if (yourData.includes("")) {
       alert("Controlla che tutti i campi siano compilati");
@@ -189,10 +187,8 @@ const setAnimationType = newType => {
   let Taxcode = document.forms["yourData"]["taxcode"].value;
   let Address = document.forms["yourData"]["address"].value;
   let patientData = [Name, Taxcode, Address]
-  let activePanel = getActivePanel();
-  let activeStep = getActiveStep();
 
-  if (yourData.includes("")) {
+  if (patientData.includes("")) {
       alert("Controlla che tutti i campi siano compilati");
       setActiveStep(1); 
       setActivePanel(1);
@@ -207,19 +203,71 @@ const setAnimationType = newType => {
   Next3.addEventListener("click", validateForm3)
 
   function validateForm3() {
-  let Name = document.forms["yourData"]["name"].value;
-  let Taxcode = document.forms["yourData"]["taxcode"].value;
-  let Address = document.forms["yourData"]["address"].value;
-  let patientData = [Name, Taxcode, Address]
-  let activePanel = getActivePanel();
-  let activeStep = getActiveStep();
+  let Ore = document.forms["yourData"]["Ore"].value;
+  let Descrizione = document.forms["yourData"]["Descrizione"].value;
+  let Unitario = document.forms["yourData"]["Unitario"].value;
+  let transactionData = [Ore, Descrizione, Unitario]
 
-  if (yourData.includes("")) {
+  if (transactionData.includes("")) {
       alert("Controlla che tutti i campi siano compilati");
-      setActiveStep(1); 
-      setActivePanel(1);
-    } else {
       setActiveStep(2); 
       setActivePanel(2);
+    } else {
+      setActiveStep(3); 
+      setActivePanel(3);
     }
   };
+
+  //newPrestazione
+  var add2 = document.getElementById('add1')
+  var add3 = document.getElementById('add2')
+  var del2 = document.getElementById('del2')
+  var del3 = document.getElementById('del3')
+  add2.addEventListener("click", addPrestazione2)
+  add3.addEventListener("click", addPrestazione3)
+  del2.addEventListener("click", remPrestazione2)
+  del3.addEventListener("click", remPrestazione3)
+
+  function addPrestazione2(){
+    //elimina button
+    var add2 = document.getElementById('add1')
+    add2.style.display='none'
+    //mostra prestazione2
+    var prest2 = document.getElementById('prestazione2')
+    prest2.style.display='block'
+  }
+
+  function remPrestazione2(){
+    //svuota campi
+    document.querySelector("#Ore2").value=0
+    document.querySelector("#Descrizione2").value=""
+    document.querySelector("#Unitario2").value=0
+    //nasconde prestazione2
+    var remPrest2 = document.getElementById('prestazione2')
+    remPrest2.style.display='none'
+    //riappare button
+    var add2 = document.getElementById('add1')
+    add2.style.display='block'
+  }
+
+  function addPrestazione3(){
+    //cambia colore button
+    var add3 = document.getElementById('add2')
+    add3.style.display='none'
+    //mostra prestazione3
+    var prest3 = document.getElementById('prestazione3')
+    prest3.style.display='block'
+  }
+
+  function remPrestazione3(){
+    //svuota campi
+    document.querySelector("#Ore3").value='0'
+    document.querySelector("#Descrizione3").value=""
+    document.querySelector("#Unitario3").value=0
+    //nasconde prestazione3
+    var remPrest3 = document.getElementById('prestazione3')
+    remPrest3.style.display='none'
+    //riappare button
+    var add2 = document.getElementById('add2')
+    add2.style.display='block'
+  }
