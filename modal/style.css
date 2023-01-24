@@ -177,3 +177,11 @@ body a {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
+
+#prestazione2 {
+  display: none;
+}
+
+#prestazione3 {
+  display: none;
+}
