@@ -40,7 +40,7 @@
           <div class="col-12 col-lg-8 m-auto">
 
             <!--I tuoi dati-->
-            <form name="yourData" class="multisteps-form__form">
+            <form name="yourData" id="form" class="multisteps-form__form">
               <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
                 <h3 class="multisteps-form__title">I tuoi dati</h3>
                 <div class="multisteps-form__content">
@@ -113,7 +113,7 @@
               <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
                 <h3 class="multisteps-form__title">Prestazione</h3>
                 <div class="multisteps-form__content">
-                  <div class="prestazione">
+                  <div class="prestazione1">
                     <div>
                       <label for="Ore">Inserisci quante ore o quante unità da fatturare:</label>
                       <input class="multisteps-form__input form-control" name="Ore" required type="number" placeholder="Ore/Numero"/>
@@ -130,9 +130,60 @@
                     </div>
                   </div>
                   <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary text-center add_form_field" type="button" title="Add">Aggiungi Prestazione</button>
+                    <button class="btn btn-primary ml-auto add-prest" id="add1" type="button" title="delete">Aggiungi Prestazione</button>
                   </div>
                   <hr/>
+                  <div id="prestazione2">
+                    <br>
+                    <h4>Opzionale: Prestazione 2</h4>
+                    <br>
+                    <div>
+                      <label for="Ore2">Inserisci quante ore o quante unità da fatturare:</label>
+                      <input class="multisteps-form__input form-control" id="Ore2" name="Ore2" required type="number" placeholder="Ore/Numero"/>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="Descrizione2">Descrivi in breve la prestazione:</label>
+                      <input class="multisteps-form__input form-control" id="Descrizione2" name="Descrizione2" required type="text" placeholder="Descrizione Servizio"/>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="Unitario2">Inserisci il prezzo orario/unitario, solo numeri (senza "€"):</label>
+                      <input class="multisteps-form__input form-control" id="Unitario2" name="Unitario2" required type="number" placeholder="Prezzo Unitario"/>
+                    </div>
+                    <br>
+                    <div class="button-row d-flex mt-4">
+                        <button class="btn btn-primary ml-auto" id="add2" type="button" title="Aggiungi nuova prestazione">Aggiungi Prestazione</button>
+                        <button class="btn btn-danger ml-auto" id="del2" type="button" title="Elimina prestazione">Elimina Prestazione</button>
+                    </div>
+                    <hr/>
+                  </div>
+                  <div id="prestazione3">
+                    <br>
+                    <h4>Opzionale: Prestazione 3</h4>
+                    <br>
+                    <div>
+                      <label for="Ore3">Inserisci quante ore o quante unità da fatturare:</label>
+                      <input class="multisteps-form__input form-control" id="Ore3" name="Ore3" required type="number" placeholder="Ore/Numero"/>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="Descrizione3">Descrivi in breve la prestazione:</label>
+                      <input class="multisteps-form__input form-control" id="Descrizione3" name="Descrizione3" required type="text" placeholder="Descrizione Servizio"/>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="Unitario3">Inserisci il prezzo orario/unitario, solo numeri (senza "€"):</label>
+                      <input class="multisteps-form__input form-control" id="Unitario3" name="Unitario3" required type="number" placeholder="Prezzo Unitario"/>
+                    </div>
+                    <div class="button-row d-flex mt-4">
+                      <button class="btn btn-danger ml-auto  hide-prest" id="del3" type="button" title="Elimina prestazione">Elimina Prestazione</button>
+                    </div>
+                    <hr>
+                  </div>
+                  <br>
+                    <h4>Aggiunte opzionali</h4>
+                    <br>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">Vuoi aggiungere il 4% per i contributi INPS?</label>
@@ -149,7 +200,7 @@
                   <div class="row">
                     <div class="button-row d-flex mt-4 col-12">
                       <button class="btn btn-primary js-btn-prev" id="prevStep2" type="button" title="Prev">Indietro</button>
-                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Avanti</button>
+                      <button class="btn btn-primary ml-auto js-btn-next" id="step3" type="button" title="Next">Avanti</button>
                     </div>
                   </div>
                 </div>
@@ -173,7 +224,7 @@
                   <p>Assicurati che la data e il numero di questa fattura non siano antecedenti a quelli dell'ultima fattura che hai emesso.</p>
                   <div class="button-row d-flex mt-4">
                     <button class="btn btn-primary js-btn-prev" id="prevStep3" type="button" title="Prev">Indietro</button>
-                    <button class="btn btn-success ml-auto" type="button" title="Send">Genera PDF</button>
+                    <button class="btn btn-success ml-auto" type="submit" title="Send">Genera PDF</button>
                   </div>
                 </div>
               </div>
@@ -184,35 +235,6 @@
     </div>
   </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-
-<script> $(document).ready(function() {
-  var max_fields = 5;
-  var wrapper = $(".prestazione");
-  var add_button = $(".add_form_field");
-
-  var x = 1;
-  $(add_button).click(function(e) {
-      e.preventDefault();
-      if (x < max_fields) {
-          x++;
-          $(wrapper).append('<div><div><br><hr class="hr hr-blurry" /><br><label for="Ore">Inserisci quante ore o quante unità da fatturare:</label><input class="multisteps-form__input form-control" name="Ore" required type="number" placeholder="Ore/Numero"/></div><br><div><label for="Descrizione">Descrivi in breve la prestazione:</label><input class="multisteps-form__input form-control" name="Descrizione" required type="text" placeholder="Descrizione"/></div><br><div><label for="Unitario">Inserisci il prezzo orario/unitario, solo numeri (senza "€"):</label><input class="multisteps-form__input form-control" name="Unitario" required type="number" placeholder="Prezzo Unitario"/></div><br><button class="btn btn-danger delete" type="button">Elimina Prestazione</button></div>'); //add input box
-      } else {
-          alert('Puoi aggiungere fino a 5 prestazioni')
-      }
-  });
-
-  $(wrapper).on("click", ".delete", function(e) {
-      var elimina = confirm("Vuoi cancellare la prestazione?")
-      if (elimina=true) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-      } else {}
-  })
-});
-</script>
 
 <script  src="function.js"></script>
 
