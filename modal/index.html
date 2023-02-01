@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crea Fattura by Fisioterapisti</title>
+  <title>Crea Fattura | Fisioterapisti.org</title>
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
 <link rel="stylesheet" href="style.css">
@@ -29,10 +29,10 @@
         <div class="row">
           <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
             <div class="multisteps-form__progress">
-              <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">I tuoi dati</button>
-              <button class="multisteps-form__progress-btn" type="button" title="Address">Dati Paziente o Ente</button>
-              <button class="multisteps-form__progress-btn" type="button" title="Order Info">Dati Prestazione</button>
-              <button class="multisteps-form__progress-btn" type="button" title="Message">Dati Fattura</button>
+              <button class="multisteps-form__progress-btn js-active" type="button" title="I tuoi dati">I tuoi dati</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Dati Paziente o Ente">Dati Paziente o Ente</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Dati Prestazione">Dati Prestazione</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Dati Fattura">Dati Fattura</button>
             </div>
           </div>
         </div>
@@ -58,25 +58,25 @@
                   <div class="form-row mt-4">
                     <div class="col-12 col-sm-6">
                       <label for="Cognome">Inserisci il tuo Cognome:</label>
-                      <input class="multisteps-form__input form-control" name="Cognome" required type="text" placeholder="Cognome"/>
+                      <input class="multisteps-form__input form-control" name="Cognome"  type="text" placeholder="Cognome"/>
                     </div>
                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
                       <label for="Nome">Inserisci il tuo Nome:</label>
-                      <input class="multisteps-form__input form-control" name="Nome" required type="text" placeholder="Nome"/>
+                      <input class="multisteps-form__input form-control" name="Nome"  type="text" placeholder="Nome"/>
                     </div>
                   </div>
                   <div class="form-row mt-4">
                     <div class="col-12 col-sm-6">
-                      <label for="Indirizzo">Inserisci il tuo Indirizzo:</label>
-                      <input class="multisteps-form__input form-control" name="Indirizzo" required type="text" placeholder="Indirizzo"/>
+                      <label for="Indirizzo">Inserisci il tuo Indirizzo (via, città, CAP):</label>
+                      <input class="multisteps-form__input form-control" name="Indirizzo"  type="text" placeholder="Indirizzo"/>
                     </div>
                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
                       <label for="P.IVA">Inserisci la tua P.IVA:</label>
-                      <input class="multisteps-form__input form-control" name="P.IVA" required type="text" placeholder="P. IVA"/>
+                      <input class="multisteps-form__input form-control" name="P.IVA"  type="text" placeholder="P. IVA"/>
                     </div>
                   </div>
                   <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary ml-auto js-btn-next" id="step1" type="button" title="Next">Avanti</button>
+                    <button class="btn btn-primary ml-auto js-btn-next" id="step1" type="button" title="Avanti">Avanti</button>
                   </div>
                 </div>
               </div>
@@ -88,24 +88,24 @@
                   <div class="form-row mt-4" id="persFis">
                     <div class="col-12 col-sm-6">
                       <label for="name">Nome o Ragione Sociale</label>
-                      <input class="multisteps-form__input form-control" name="name" required type="text" placeholder="Nome Paziente o Ragione Sociale"/>
+                      <input class="multisteps-form__input form-control" name="name"  type="text" placeholder="Nome Paziente o Ragione Sociale"/>
                     </div>
                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
                       <label for="taxcode">C.F. del Paziente o P.IVA Ente:</label>
-                      <input class="multisteps-form__input form-control" name="taxcode" required type="text" placeholder="Codice Fiscale o P.IVA"/>
+                      <input class="multisteps-form__input form-control" name="taxcode"  type="text" placeholder="Codice Fiscale o P.IVA"/>
                     </div>
                   </div>
                   <div class="form-row mt-4">
                     <div class="col-12 col-sm-6">
-                      <label for="taxcode">Indirizzo del Paziente/Ente:</label>
-                      <input class="multisteps-form__input form-control" name="address" required type="text" placeholder="Indirizzo"/>
+                      <label for="taxcode">Indirizzo del Paziente/Ente (via, città, CAP):</label>
+                      <input class="multisteps-form__input form-control" name="address"  type="text" placeholder="Indirizzo"/>
                     </div>
                   </div>
                   <hr class="hr hr-blurry" />
                   <div><p>NB: Ricorda di raccogliere il consenso privacy al trattamento dei dati personali.</p></div>
                   <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary js-btn-prev" id="prevStep1" type="button" title="Prev">Indietro</button>
-                    <button class="btn btn-primary ml-auto js-btn-next" id="step2" type="button" title="Next">Avanti</button>
+                    <button class="btn btn-primary js-btn-prev" id="prevStep1" type="button" title="Indietro">Indietro</button>
+                    <button class="btn btn-primary ml-auto js-btn-next" id="step2" type="button" title="Avanti">Avanti</button>
                   </div>
                 </div>
               </div>
@@ -120,17 +120,17 @@
                   <div class="prestazione1">
                     <div>
                       <label for="Ore">Inserisci quante ore o quante unità da fatturare:</label>
-                      <input class="multisteps-form__input form-control" name="Ore" required type="number" placeholder="Ore/Numero"/>
+                      <input class="multisteps-form__input form-control" name="Ore"  type="number" placeholder="Ore/Numero"/>
                     </div>
                     <br>
                     <div>
                       <label for="Descrizione">Descrivi in breve la prestazione:</label>
-                      <input class="multisteps-form__input form-control" name="Descrizione" required type="text" placeholder="Descrizione Servizio"/>
+                      <input class="multisteps-form__input form-control" name="Descrizione"  type="text" placeholder="Descrizione Servizio"/>
                     </div>
                     <br>
                     <div>
                       <label for="Unitario">Inserisci il prezzo orario/unitario, solo numeri (senza "€"):</label>
-                      <input class="multisteps-form__input form-control" name="Unitario" required type="number" placeholder="Prezzo Unitario"/>
+                      <input class="multisteps-form__input form-control" name="Unitario"  type="number" placeholder="Prezzo Unitario"/>
                     </div>
                   </div>
                   <div class="button-row d-flex mt-4">
@@ -143,17 +143,17 @@
                     <br>
                     <div>
                       <label for="Ore2">Inserisci quante ore o quante unità da fatturare:</label>
-                      <input class="multisteps-form__input form-control" id="Ore2" name="Ore2" required type="number" placeholder="Ore/Numero"/>
+                      <input class="multisteps-form__input form-control" id="Ore2" name="Ore2" type="number" placeholder="Ore/Numero"/>
                     </div>
                     <br>
                     <div>
                       <label for="Descrizione2">Descrivi in breve la prestazione:</label>
-                      <input class="multisteps-form__input form-control" id="Descrizione2" name="Descrizione2" required type="text" placeholder="Descrizione Servizio"/>
+                      <input class="multisteps-form__input form-control" id="Descrizione2" name="Descrizione2" type="text" placeholder="Descrizione Servizio"/>
                     </div>
                     <br>
                     <div>
                       <label for="Unitario2">Inserisci il prezzo orario/unitario, solo numeri (senza "€"):</label>
-                      <input class="multisteps-form__input form-control" id="Unitario2" name="Unitario2" required type="number" placeholder="Prezzo Unitario"/>
+                      <input class="multisteps-form__input form-control" id="Unitario2" name="Unitario2" type="number" placeholder="Prezzo Unitario"/>
                     </div>
                     <br>
                     <div class="button-row d-flex mt-4">
@@ -168,17 +168,17 @@
                     <br>
                     <div>
                       <label for="Ore3">Inserisci quante ore o quante unità da fatturare:</label>
-                      <input class="multisteps-form__input form-control" id="Ore3" name="Ore3" required type="number" placeholder="Ore/Numero"/>
+                      <input class="multisteps-form__input form-control" id="Ore3" name="Ore3" type="number" placeholder="Ore/Numero"/>
                     </div>
                     <br>
                     <div>
                       <label for="Descrizione3">Descrivi in breve la prestazione:</label>
-                      <input class="multisteps-form__input form-control" id="Descrizione3" name="Descrizione3" required type="text" placeholder="Descrizione Servizio"/>
+                      <input class="multisteps-form__input form-control" id="Descrizione3" name="Descrizione3" type="text" placeholder="Descrizione Servizio"/>
                     </div>
                     <br>
                     <div>
                       <label for="Unitario3">Inserisci il prezzo orario/unitario, solo numeri (senza "€"):</label>
-                      <input class="multisteps-form__input form-control" id="Unitario3" name="Unitario3" required type="number" placeholder="Prezzo Unitario"/>
+                      <input class="multisteps-form__input form-control" id="Unitario3" name="Unitario3" type="number" placeholder="Prezzo Unitario"/>
                     </div>
                     <div class="button-row d-flex mt-4">
                       <button class="btn btn-danger ml-auto  hide-prest" id="del3" type="button" title="Elimina prestazione">Elimina Prestazione 3</button>
@@ -189,13 +189,13 @@
                     <h4>Aggiunte opzionali</h4>
                     <br>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">Vuoi aggiungere il 4% per i contributi INPS?</label>
+                    <input class="form-check-input" type="checkbox" value="" id="INPS">
+                    <label class="form-check-label" for="INPS">Vuoi aggiungere il 4% per i contributi INPS?</label>
                   </div>
                   <br>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">Vuoi aggiungere €2 per la Marca da Bollo?</label>
+                    <input class="form-check-input" type="checkbox" value="" id="MarcaDaBollo">
+                    <label class="form-check-label" for="MarcaDaBollo">Vuoi aggiungere €2 per la Marca da Bollo?</label>
                   </div>
                   <hr>
                   <br>
@@ -204,8 +204,8 @@
 
                   <div class="row">
                     <div class="button-row d-flex mt-4 col-12">
-                      <button class="btn btn-primary js-btn-prev" id="prevStep2" type="button" title="Prev">Indietro</button>
-                      <button class="btn btn-primary ml-auto js-btn-next" id="step3" type="button" title="Next">Avanti</button>
+                      <button class="btn btn-primary js-btn-prev" id="prevStep2" type="button" title="Indietro">Indietro</button>
+                      <button class="btn btn-primary ml-auto js-btn-next" id="step3" type="button" title="Avanti">Avanti</button>
                     </div>
                   </div>
                 </div>
@@ -217,19 +217,20 @@
                   <div class="form-row mt-4">
                     <div class="col-12 col-sm-6">
                       <label for="emissione">Data di Emissione della Fattura:</label>
-                      <input class="multisteps-form__input form-control" name="Emissione" required type="date" placeholder="Data di Emissione"/>
+                      <input class="multisteps-form__input form-control" name="Emissione"  type="date" placeholder="Data di Emissione"/>
                       
                     </div>
                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
                       <label for="Numero">Numero della Fattura:</label>
-                      <input class="multisteps-form__input form-control" name="Numero" required type="number" placeholder="Numero Fattura"/>
+                      <input class="multisteps-form__input form-control" name="Numero"  type="number" placeholder="Numero Fattura"/>
                     </div>
                   </div>
                   <hr>
-                  <p>Assicurati che la data e il numero di questa fattura non siano antecedenti a quelli dell'ultima fattura che hai emesso.</p>
+                  <p>IMPORTANTE: Assicurati che la data e il numero di questa fattura NON siano antecedenti a quelli dell'ultima fattura che hai emesso.</p>
                   <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary js-btn-prev" id="prevStep3" type="button" title="Prev">Indietro</button>
-                    <button class="btn btn-success ml-auto" type="submit" title="Send">Genera PDF</button>
+                    <button class="btn btn-primary js-btn-prev" id="prevStep3" type="button" title="Indietro">Indietro</button>
+                    <button class="btn btn-success ml-auto" id="submit" type="submit" title="Send">Genera PDF</button>
+
                   </div>
                 </div>
               </div>
@@ -238,13 +239,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="assets/jspdf.umd.min.js"></script>
+<script src="assets/jspdf.plugin.autotable.js"></script>
 <script src="function.js"></script>
-<script src="jspdf.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>
+<script src="generapdf.js"></script>
 
 </body>
 </html>
