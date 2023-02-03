@@ -21,7 +21,7 @@
   </header>
 </div>
 
-<div class="content">
+<div class="content" id="wizard">
   <div class="content__inner">
     <div class="container"></div><br></div>
     <div class="container overflow-hidden">
@@ -40,7 +40,7 @@
           <div class="col-12 col-lg-8 m-auto">
 
             <!--I tuoi dati-->
-            <form name="yourData" id="form" class="multisteps-form__form">
+            <form name="yourData" id="form" class="multisteps-form__form" onsubmit="thankyouPage();return false">
               <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
                 <h3 class="multisteps-form__title">I tuoi dati</h3>
                 <div class="multisteps-form__content">
@@ -134,7 +134,7 @@
                     </div>
                   </div>
                   <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary ml-auto add-prest" id="add1" type="button" title="delete">Crea nuova riga Prestazione</button>
+                    <button class="btn btn-primary ml-auto add-prest" id="add1" type="button" title="delete">Aggiungi Seconda Prestazione</button>
                   </div>
                   <hr/>
                   <div id="prestazione2">
@@ -157,7 +157,7 @@
                     </div>
                     <br>
                     <div class="button-row d-flex mt-4">
-                        <button class="btn btn-primary ml-auto" id="add2" type="button" title="Aggiungi nuova prestazione">Crea nuova riga Prestazione</button>
+                        <button class="btn btn-primary ml-auto" id="add2" type="button" title="Aggiungi nuova prestazione">Aggiungi Terza Prestazione</button>
                         <button class="btn btn-danger ml-auto" id="del2" type="button" title="Elimina prestazione">Elimina Prestazione 2</button>
                     </div>
                     <hr/>
@@ -229,8 +229,7 @@
                   <p>IMPORTANTE: Assicurati che la data e il numero di questa fattura NON siano antecedenti a quelli dell'ultima fattura che hai emesso.</p>
                   <div class="button-row d-flex mt-4">
                     <button class="btn btn-primary js-btn-prev" id="prevStep3" type="button" title="Indietro">Indietro</button>
-                    <button class="btn btn-success ml-auto" id="submit" type="submit" title="Send">Genera PDF</button>
-
+                    <button class="btn btn-success ml-auto" id="genera" title="Send">Genera PDF</button>
                   </div>
                 </div>
               </div>
@@ -241,6 +240,78 @@
     </div>
   </div> 
 </div>
+
+        <!--Thank you-->
+        <div id="thankyou">
+          <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div class="row align-items-center g-lg-5 py-5">
+              <div class="col-lg-7 text-center text-lg-start">
+                <h1 class="display-6 fw-bold lh-1 mb-3">
+                  <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-question-octagon-fill" viewBox="0 0 16 16">
+                    <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM5.496 6.033a.237.237 0 0 1-.24-.247C5.35 4.091 6.737 3.5 8.005 3.5c1.396 0 2.672.73 2.672 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.105a.25.25 0 0 1-.25.25h-.81a.25.25 0 0 1-.25-.246l-.004-.217c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.803 0-1.253.478-1.342 1.134-.018.137-.128.25-.266.25h-.825zm2.325 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z"/>
+                  </svg>
+                 E ora, come si continua?</h1>
+                <h4 class="col-lg-10">Quando metto la <em>Marca da Bollo</em>? <br> Quante <em>copie</em> servono? <br> Per <em>quanto tempo</em> devo conservarle? <hr></h4> 
+                <h3 class="col-lg-10"> <b>Scopriamolo insieme:</b><br> Iscriviti da qui per non perderti le mail con i consigli più utili di Fisioterapisti.org! </h3>
+              </div>
+              <div class="col-md-10 mx-auto col-lg-5">
+                <form class="p-4 p-md-5 border rounded-3 bg-light">
+                  <div class="container text-center">
+                    <svg class="text-center text-primary mb-4"xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                    </svg>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingPassword" placeholder="Nome e Cognome">
+                    <label for="floatingPassword">Il tuo nome e cognome:</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Il tuo indirizzo email:</label>
+                  </div>
+                  <div class="checkbox mb-3">
+                    <label>
+                      <input type="checkbox" value="remember-me"> Accetto di iscrivermi alla Newsletter di Fisioterapisti.org
+                    </label>
+                  </div>
+                  <button class="w-100 btn btn-lg btn-success" type="submit">Iscriviti</button>
+                  <hr class="my-4">
+                  <small class="text-muted">Cliccando su "Iscriviti" accetti i Termini di Utilizzo.</small>
+                </form>
+              </div>
+            </div>
+          </div>
+  
+          <!--Altra Fattura-->
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="img/ty.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Grazie per aver usato il tool gratuito per le fatture!</h1>
+                <p class="lead">Speriamo tu l'abbia trovato davvero utile e semplice da usare. <br> Se vuoi farci una segnalazione, contattaci a: fisioterapistiorg@gmail.com</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Nuova fattura</button>
+                  <button type="button" class="btn btn-outline-secondary btn-lg px-4">Canale Telegram</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!--Footer-->
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2023 Fisioterapisti.org</p>
+      </footer>
+    </div>
+        
 
 <script src="assets/jspdf.umd.min.js"></script>
 <script src="assets/jspdf.plugin.autotable.js"></script>
