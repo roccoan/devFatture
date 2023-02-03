@@ -119,6 +119,25 @@ window.addEventListener('load', setFormHeight, false);
 
 window.addEventListener('resize', setFormHeight, false);
 
+//prevent Enter Key from submtting form
+document.addEventListener("keypress", (e) => {
+  let result = stopFormSubmission(e);
+  if (result) e.preventDefault();
+});
+
+function stopFormSubmission(e) {
+  let hasForm = false;
+  if (e.key == "Enter") {    
+    e.composedPath().forEach((element) => {
+      let elementId = element.getAttribute && element.getAttribute("id");
+      if (elementId == "Form") hasForm = true;
+    });
+  }
+
+  if (hasForm) return true;
+  else return false;
+} 
+
 
 const setAnimationType = newType => {
   DOMstrings.stepFormPanels.forEach(elem => {
@@ -154,8 +173,21 @@ const setAnimationType = newType => {
   }
 
   //Validation 1st Page
+  //Crea Variabile per validation all'ultimo step per chi salta i passaggi
+  var genpdf = document.getElementById('genera')
+
   var Next1 = document.getElementById('step1')
   Next1.addEventListener("click", validateForm1)
+  genpdf.addEventListener("click", validateForm1)
+  //Next1.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    /*if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      document.Next1.click();
+    }*/
+  //});
   
   function validateForm1() {
   let Cognome = document.forms["yourData"]["Cognome"].value;
@@ -165,7 +197,7 @@ const setAnimationType = newType => {
   let yourData = [Cognome, Nome, Indirizzo, PIVA];
 
   if (yourData.includes("")) {
-      alert("Controlla che tutti i campi siano compilati");
+      alert("Controlla che tutti i campi della pagina 1 siano compilati");
       setActiveStep(0); 
       setActivePanel(0);
     } else if (PIVA.length != 11) {
@@ -176,11 +208,14 @@ const setAnimationType = newType => {
       setActiveStep(1); 
       setActivePanel(1);
     }
+
+    javascript:void(0)
   };
 
   //Validation 2nd Page
   var Next2 = document.getElementById('step2')
   Next2.addEventListener("click", validateForm2)
+  genpdf.addEventListener("click", validateForm2)
 
   function validateForm2() {
   let Name = document.forms["yourData"]["name"].value;
@@ -189,18 +224,21 @@ const setAnimationType = newType => {
   let patientData = [Name, Taxcode, Address]
 
   if (patientData.includes("")) {
-      alert("Controlla che tutti i campi siano compilati");
+      alert("Controlla che tutti i campi della pagina 2 siano compilati");
       setActiveStep(1); 
       setActivePanel(1);
     } else {
       setActiveStep(2); 
       setActivePanel(2);
     }
+
+    javascript:void(0)
   };
 
   //Validation 3rd Page
   var Next3 = document.getElementById('step3')
   Next3.addEventListener("click", validateForm3)
+  genpdf.addEventListener("click", validateForm3)
 
   function validateForm3() {
   let Ore = document.forms["yourData"]["Ore"].value;
@@ -209,13 +247,15 @@ const setAnimationType = newType => {
   let transactionData = [Ore, Descrizione, Unitario]
 
   if (transactionData.includes("")) {
-      alert("Controlla che tutti i campi siano compilati");
+      alert("Controlla che tutti i campi della pagina 3 siano compilati");
       setActiveStep(2); 
       setActivePanel(2);
     } else {
       setActiveStep(3); 
       setActivePanel(3);
     }
+  
+    javascript:void(0)
   };
 
   //newPrestazione
@@ -250,7 +290,7 @@ const setAnimationType = newType => {
     add2.style.display='block'
   }
 
-  function addPrestazione3(){
+  function addPrestazione3() {
     //cambia colore button
     var add3 = document.getElementById('add2')
     add3.style.display='none'
@@ -259,7 +299,7 @@ const setAnimationType = newType => {
     prest3.style.display='block'
   }
 
-  function remPrestazione3(){
+  function remPrestazione3() {
     //svuota campi
     document.querySelector("#Ore3").value='0'
     document.querySelector("#Descrizione3").value=""
@@ -271,3 +311,11 @@ const setAnimationType = newType => {
     var add2 = document.getElementById('add2')
     add2.style.display='block'
   }
+
+function thankyouPage() {
+  //redirect alla thank you page
+  var nascondiForm = document.getElementById('wizard')
+  var mostraThankyoupage = document.getElementById('thankyou')
+  nascondiForm.style.display='none'
+  mostraThankyoupage.style.display='block'
+}
