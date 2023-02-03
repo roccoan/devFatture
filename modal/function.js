@@ -179,15 +179,6 @@ const setAnimationType = newType => {
   var Next1 = document.getElementById('step1')
   Next1.addEventListener("click", validateForm1)
   genpdf.addEventListener("click", validateForm1)
-  //Next1.addEventListener("keypress", function(event) {
-    // If the user presses the "Enter" key on the keyboard
-    /*if (event.key === "Enter") {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      document.Next1.click();
-    }*/
-  //});
   
   function validateForm1() {
   let Cognome = document.forms["yourData"]["Cognome"].value;
@@ -209,7 +200,9 @@ const setAnimationType = newType => {
       setActivePanel(1);
     }
 
-    javascript:void(0)
+    //torna in alto
+    var scroll1 = document.getElementById("wizard");
+    scroll1.scrollIntoView();
   };
 
   //Validation 2nd Page
@@ -232,7 +225,9 @@ const setAnimationType = newType => {
       setActivePanel(2);
     }
 
-    javascript:void(0)
+    //torna in alto
+    var scroll2 = document.getElementById("wizard");
+    scroll2.scrollIntoView();
   };
 
   //Validation 3rd Page
@@ -254,8 +249,10 @@ const setAnimationType = newType => {
       setActiveStep(3); 
       setActivePanel(3);
     }
-  
-    javascript:void(0)
+
+    //torna in alto
+    var scroll3 = document.getElementById("wizard");
+    scroll3.scrollIntoView();
   };
 
   //newPrestazione
