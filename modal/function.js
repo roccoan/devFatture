@@ -120,23 +120,12 @@ window.addEventListener('load', setFormHeight, false);
 window.addEventListener('resize', setFormHeight, false);
 
 //prevent Enter Key from submtting form
-document.addEventListener("keypress", (e) => {
-  let result = stopFormSubmission(e);
-  if (result) e.preventDefault();
+$(document).keypress(
+  function(event){
+    if (event.which == '13') {
+      event.preventDefault();
+    }
 });
-
-function stopFormSubmission(e) {
-  let hasForm = false;
-  if (e.key == "Enter") {    
-    e.composedPath().forEach((element) => {
-      let elementId = element.getAttribute && element.getAttribute("id");
-      if (elementId == "Form") hasForm = true;
-    });
-  }
-
-  if (hasForm) return true;
-  else return false;
-} 
 
 
 const setAnimationType = newType => {
